@@ -3,6 +3,24 @@ uvicorn[standard]>=0.22.0
 pydantic>=2.6.1
 httpx>=0.28.1
 
+# Database
+sqlalchemy>=2.0.0
+psycopg2-binary>=2.9.0
+
+# Redis & async jobs
+redis>=4.6.0
+rq>=1.2.0
+python-dotenv>=1.0.0
+
+# AI integrations
+google-generativeai>=0.3.0
+
+# NLP & text processing
+nltk>=3.8.1
+spacy>=3.5.0
+
 # Test deps
 pytest>=7.0.0
 pytest-asyncio>=0.21.0
+httpx>=0.28.1
+

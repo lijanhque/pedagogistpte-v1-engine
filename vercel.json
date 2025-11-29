@@ -1,0 +1,23 @@
+{
+  "buildCommand": "npm run build",
+  "public": true,
+  "functions": {
+    "api/**/*.ts": {
+      "runtime": "nodejs20.x"
+    }
+  },
+  "env": {
+    "NEXT_PUBLIC_SCORING_API_URL": {
+      "description": "Base URL of the PTE Scoring API",
+      "placeholder": "http://localhost:8000 or https://scoring-api.example.com"
+    },
+    "VERCEL_AI_GATEWAY_KEY": {
+      "description": "API key for Vercel AI Gateway (for client-side model calls)",
+      "required": false
+    },
+    "GOOGLE_GENAI_KEY": {
+      "description": "API key for Google GenAI (optional fallback model)",
+      "required": false
+    }
+  }
+}

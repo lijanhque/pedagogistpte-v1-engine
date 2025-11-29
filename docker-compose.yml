@@ -17,3 +17,14 @@ services:
     image: redis:7
     ports:
       - "6379:6379"
+
+  worker:
+    build:
+      context: ./services/scoring_api
+    command: ["rq", "worker", "scoring"]
+    environment:
+      - REDIS_URL=redis://redis:6379/0
+      - VERCEL_AI_GATEWAY_KEY=${VERCEL_AI_GATEWAY_KEY}
+    depends_on:
+      - redis
+      - scoring_api
